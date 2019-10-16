@@ -33,7 +33,7 @@ def getGuess():
       #Decrements the users chances, when their guess is incorrect
       chancesLeft -= 1   
       #If a user has no more chances; they lose
-  if chancesLeft = 0:
+  if chancesLeft < 0:
     print ("You lose!!! The word was: " + str(theWord))
   else:
     # Otherwise the user wins
@@ -53,7 +53,18 @@ def updateBlanks(secret, guessBlanks, recGuess):
       
   return result
 # Array of words
-words = ["dwarves","fairies","dragon","mermaid","griffin","elves","wizard","goblin","hobbit","angel","demon","kraken"]
+words = ["dwarves","fairies","dragon","mermaid","griffin","centaur","unicorn","werewolf","gnome","pegasus","leprechaun","elves","wizard","goblin","hobbit","angel","demon","kraken"]
 # Generates a random word from the array for the user to guees 
 theWord = random.choice(words)
 getGuess()
+
+restart = input("Play Again? ")
+if restart == "yes" or "y":
+  print("Starting New Game!")
+  print("This word is Magical!")
+  getGuess()
+elif restart == "no" or "n":
+  print("Game Over!")
+  sys.exit(0)
+  
+  
